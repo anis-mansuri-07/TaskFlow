@@ -146,9 +146,11 @@ Application runs by default on:
 
 ---
 
-## 👨‍💻 Author
+## 🧑‍💻 Author
 
 **Mahammedanis Mansuri**
+🎓 MCA Student | 💻 Java & Spring Developer
 📧 [[anishmansuri269@gmail.com](mailto:anishmansuri269@gmail.com)]
 💻 [GitHub Profile](https://github.com/anis-mansuri-07)
+🔗 [Connect with me on LinkedIn](https://www.linkedin.com/in/anis-mansuri-57b97a25a)
 
