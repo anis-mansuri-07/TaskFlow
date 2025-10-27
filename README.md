@@ -98,7 +98,7 @@ TaskFlow/
 ### ▶️ Steps
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/taskflow.git
+git clone https://github.com/anis-mansuri-07/taskflow.git
 
 # 2. Open the project in IntelliJ or VS Code
 
@@ -148,14 +148,7 @@ Application runs by default on:
 
 ## 👨‍💻 Author
 
-**Ksd Heg**
-📧 [[your-email@example.com](mailto:your-email@example.com)]
-💻 [GitHub Profile](https://github.com/your-username)
+**Mahammedanis Mansuri**
+📧 [[anishmansuri269@gmail.com](mailto:anishmansuri269@gmail.com)]
+💻 [GitHub Profile](https://github.com/anis-mansuri-07)
 
----
-
-
-
-
-That one would include npm setup, Axios, and routing instructions.
-```
