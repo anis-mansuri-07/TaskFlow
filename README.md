@@ -1,118 +1,163 @@
+# 🗂️ TaskFlow - Full-Stack Task Management System
 
-# 🗂️ TaskFlow - Task Management System
+TaskFlow is a **full-stack Task Management System** built with a **Spring Boot** backend and a **React + TypeScript** frontend. It helps you organize your work efficiently with a modern, dark-mode interface.
 
-TaskFlow is a **Spring Boot–based Task Management System** that helps you organize your work efficiently.  
-You can create task lists, manage tasks, set priorities, track progress, and mark tasks as completed — all in one clean and structured API system.  
+You can create task lists, manage tasks, set priorities, track progress, and mark tasks as completed — all in one clean and structured application.
 
----
+-----
 
 ## 🚀 Features
 
-### 🔹 Task List Management
-- Create, update, delete, and view task lists
-- Each task list shows progress (based on completed tasks)
-- Validation for empty or duplicate task lists
+### 🔹 Backend Features (Spring Boot)
 
-### 🔹 Task Management
-- Add tasks to a specific task list
-- Update or delete tasks easily
-- Set task status (`OPEN`, `CLOSED`)
-- Define priority levels (`LOW`, `MEDIUM`, `HIGH`)
-- Automatically track completion percentage for each task list
+* Create, update, delete, and view task lists.
+* Automatically calculates task list progress based on completed tasks.
+* Add, update, and delete tasks within a specific list.
+* Set task status (`OPEN`, `CLOSED`) and priority levels (`LOW`, `MEDIUM`, `HIGH`).
+* Built using **Spring Boot 3** with **JPA/Hibernate** for database interaction.
+* Clean **Service–Repository–Controller** architecture.
+* **DTO–Entity mapping** using Mapper classes.
 
-### 🔹 Backend Features
-- Built using **Spring Boot 3**
-- **JPA/Hibernate** for database interaction
-- **DTO–Entity mapping** using Mapper classes
-- Clean **Service–Repository–Controller** architecture
-- Ready for integration with a **React frontend**
+### 🔹 Frontend Features (React)
 
----
+* **Modern Dark-Mode UI:** A professional, responsive, and interactive dark theme.
+* **Full-Stack CRUD:** All operations for both Task Lists and Tasks are implemented.
+* **Interactive Modals:** All forms (Create, Update) and confirmations (Delete) use stylish, modern popups.
+* **Dynamic Progress Bars:** Real-time progress updates on the homepage.
+* **Inline Validation:** User-friendly form validation without disruptive alerts.
+* **Component-Based:** Built with reusable, styled components (Buttons, Modals, Forms) using **Tailwind CSS**.
+
+-----
 
 ## 🧩 Tech Stack
 
-| Layer | Technology |
-|-------|-------------|
-| Backend Framework | Spring Boot |
-| Language | Java 17+ |
-| Database | MySQL |
-| ORM | Spring Data JPA |
-| Build Tool | Maven |
-| Frontend (optional) | React.js (for TaskFlow Frontend) |
+### Backend
 
----
+| Layer             | Technology      |
+|-------------------|-----------------|
+| Backend Framework | Spring Boot     |
+| Language          | Java 17+        |
+| Database          | MySQL           |
+| ORM               | Spring Data JPA |
+| Build Tool        | Maven           |
+
+### Frontend
+
+| Layer      | Technology                |
+|------------|---------------------------|
+| Framework  | React (Vite + TypeScript) |
+| Styling    | Tailwind CSS              |
+| API Client | Axios                     |
+| Routing    | React Router DOM          |
+| Build Tool | npm / Vite                |
+
+-----
 
 ## 🏗️ Project Structure
 
-```
+This project consists of two separate applications: the backend API and the frontend client.
 
+### Backend (TaskFlow)
+
+```
 TaskFlow/
 ┣ src/
-┃ ┣ main/
-┃ ┃ ┣ java/com/taskflow/
-┃ ┃ ┃ ┣ controller/      → REST Controllers
-┃ ┃ ┃ ┣ dto/             → Data Transfer Objects
-┃ ┃ ┃ ┣ entity/          → JPA Entities
-┃ ┃ ┃ ┣ mapper/          → Entity-DTO Mappers
-┃ ┃ ┃ ┣ repository/      → JPA Repositories
-┃ ┃ ┃ ┗ service/impl/    → Business Logic Layer
-┃ ┃ ┗ resources/
-┃ ┃   ┣ application.properties → Configuration
-┃ ┗ test/                 → Unit tests
+┃ ┣ main/java/com/taskflow/
+┃ ┃ ┣ controller/      → REST Controllers
+┃ ┃ ┣ dto/             → Data Transfer Objects
+┃ ┃ ┣ entity/          → JPA Entities
+┃ ┃ ┣ mapper/          → Entity-DTO Mappers
+┃ ┃ ┣ repository/      → JPA Repositories
+┃ ┃ ┗ service/impl/    → Business Logic Layer
+┃ ┗ resources/
+┃   ┣ application.properties → Configuration
 ┣ pom.xml
 ┗ README.md
+```
 
-````
+### Frontend (taskflow-frontend)
 
----
+```
+taskflow-frontend/
+┣ src/
+┃ ┣ api/             → Axios API client setup
+┃ ┣ components/      → Reusable React components (Modal, Button, Forms...)
+┃ ┣ pages/           → Main page components (HomePage, TaskListDetailsPage)
+┃ ┣ services/        → API service functions (taskService, taskListService)
+┃ ┣ types/           → TypeScript type definitions
+┃ ┣ App.tsx          → Main app router
+┃ ┣ main.tsx         → React entry point
+┃ ┗ index.css        → Tailwind CSS global styles
+┣ tailwind.config.js → Tailwind configuration
+┗ vite.config.ts     → Vite configuration (with proxy)
+```
 
-## 🔧 API Endpoints
+-----
 
-### 📋 Task List APIs
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| `GET` | `/task-lists` | Get all task lists |
-| `GET` | `/task-lists/{id}` | Get task list by ID |
-| `POST` | `/task-lists` | Create new task list |
-| `PUT` | `/task-lists/{id}` | Update existing task list |
-| `DELETE` | `/task-lists/{id}` | Delete task list |
+## ⚙️ How to Set Up and Run This Project
 
-### 🧠 Task APIs
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| `GET` | `/api/task-lists/{id}/tasks` | Get all tasks for a list |
-| `GET` | `/api/task-lists/{id}/tasks/{taskId}` | Get specific task |
-| `POST` | `/api/task-lists/{id}/tasks` | Create new task under list |
-| `PUT` | `/api/task-lists/{id}/tasks/{taskId}` | Update task |
-| `DELETE` | `/api/task-lists/{id}/tasks/{taskId}` | Delete task |
-
----
-
-## ⚙️ Run the Application
+You must run **both** the backend and frontend applications simultaneously.
 
 ### 🧾 Prerequisites
-- Java 17+
-- Maven 3.8+
-- IDE (IntelliJ / VS Code / Eclipse)
 
-### ▶️ Steps
-```bash
-# 1. Clone the repository
-git clone https://github.com/anis-mansuri-07/taskflow.git
+* Java 17+
+* Maven 3.8+
+* Node.js (v18 or higher recommended)
+* A MySQL database server
 
-# 2. Open the project in IntelliJ or VS Code
+-----
 
-# 3. Build the project
-mvn clean install
+### 1\. Backend Setup (Spring Boot)
 
-# 4. Run the Spring Boot application
-mvn spring-boot:run
-````
+1.  **Clone the backend repository** (or navigate to its folder):
+    ```bash
+    git clone https://github.com/anis-mansuri-07/TaskFlow.git
+    cd TaskFlow
+    ```
+2.  **Configure Database:**
+    * Open `src/main/resources/application.properties`.
+    * Update `spring.datasource.url`, `spring.datasource.username`, and `spring.datasource.password` to match your local MySQL setup.
+    * Ensure you have a database created (e.g., `CREATE DATABASE taskflow_db;`).
+3.  **Build the project:**
+    ```bash
+    mvn clean install
+    ```
+4.  **Run the backend:**
+    ```bash
+    mvn spring-boot:run
+    ```
 
-Application runs by default on:
-👉 **[http://localhost:8080](http://localhost:8080)**
+✅ The backend API is now running on **http://localhost:8080**.
 
----
+-----
+
+### 2\. Frontend Setup (React + Vite)
+* [Click Here For Front - End](https://github.com/anis-mansuri-07/TaskFlow-FrontEnd)
+-----
+
+## 🔧 Backend API Endpoints
+
+### 📋 Task List APIs
+
+| Method   | Endpoint               | Description               |
+|----------|------------------------|---------------------------|
+| `GET`    | `/api/task-lists`      | Get all task lists        |
+| `GET`    | `/api/task-lists/{id}` | Get task list by ID       |
+| `POST`   | `/api/task-lists`      | Create new task list      |
+| `PUT`    | `/api/task-lists/{id}` | Update existing task list |
+| `DELETE` | `/api/task-lists/{id}` | Delete task list          |
+
+### 🧠 Task APIs
+
+| Method   | Endpoint                              | Description                |
+|----------|---------------------------------------|----------------------------|
+| `GET`    | `/api/task-lists/{id}/tasks`          | Get all tasks for a list   |
+| `GET`    | `/api/task-lists/{id}/tasks/{taskId}` | Get specific task          |
+| `POST`   | `/api/task-lists/{id}/tasks`          | Create new task under list |
+| `PUT`    | `/api/task-lists/{id}/tasks/{taskId}` | Update task                |
+| `DELETE` | `/api/task-lists/{id}/tasks/{taskId}` | Delete task                |
+
+-----
 
 ## 🧪 Example JSON (for Postman Testing)
 
@@ -136,21 +181,22 @@ Application runs by default on:
 }
 ```
 
----
+-----
 
 ## 🧱 Future Enhancements
 
 * Add user authentication (JWT)
-* Integrate with a React.js frontend
-* Add sorting, filtering.
+* Add sorting and filtering for tasks
+* Implement drag-and-drop for task reordering
+* Add user profiles and avatars
 
----
+-----
 
 ## 🧑‍💻 Author
 
 **Mahammedanis Mansuri**
+
 * 🎓 MCA Student | 💻 Java & Spring Developer
 * 📧 [[anishmansuri269@gmail.com](mailto:anishmansuri269@gmail.com)]
 * 💻 [GitHub Profile](https://github.com/anis-mansuri-07)
 * 🔗 [Connect with me on LinkedIn](https://www.linkedin.com/in/anis-mansuri-57b97a25a)
-
