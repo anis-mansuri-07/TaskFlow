@@ -24,9 +24,6 @@ public class Task {
 
     private String description;
 
-
-
-
     private LocalDateTime dueTime;
 
     @Enumerated(EnumType.STRING)
