@@ -19,6 +19,7 @@ public class TaskController {
     private final TaskMapper taskMapper;
 
     @GetMapping
+
     public List<TaskDto> getTasks(@PathVariable Long id) {
         return taskService.getTaskByTaskListId(id)
                 .stream()
